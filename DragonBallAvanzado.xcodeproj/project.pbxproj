@@ -10,6 +10,12 @@
 		1D529C192AE1960800F818FA /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D529C182AE1960800F818FA /* Splash.storyboard */; };
 		1D529C1B2AE197A600F818FA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C1A2AE197A600F818FA /* SplashViewController.swift */; };
 		1D529C1D2AE197BD00F818FA /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C1C2AE197BD00F818FA /* SplashViewModel.swift */; };
+		1D529C202AE1A18A00F818FA /* HeroeCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C1F2AE1A18A00F818FA /* HeroeCoreData.swift */; };
+		1D529C232AE1BD4B00F818FA /* HeroDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D529C222AE1BD4B00F818FA /* HeroDetail.storyboard */; };
+		1D529C252AE1BE3A00F818FA /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C242AE1BE3A00F818FA /* HeroDetailViewController.swift */; };
+		1D529C272AE1BFF200F818FA /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C262AE1BFF200F818FA /* HeroDetailViewModel.swift */; };
+		1D529C292AE1C0C200F818FA /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C282AE1C0C200F818FA /* HeroLocation.swift */; };
+		1D529C2C2AE1CB2600F818FA /* HeroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */; };
 		1DB65DDC2AD5C1C60046475E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB65DDB2AD5C1C60046475E /* AppDelegate.swift */; };
 		1DB65DDE2AD5C1C60046475E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB65DDD2AD5C1C60046475E /* SceneDelegate.swift */; };
 		1DB65DE02AD5C1C60046475E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB65DDF2AD5C1C60046475E /* LoginViewController.swift */; };
@@ -36,6 +42,12 @@
 		1D529C182AE1960800F818FA /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		1D529C1A2AE197A600F818FA /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		1D529C1C2AE197BD00F818FA /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		1D529C1F2AE1A18A00F818FA /* HeroeCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeCoreData.swift; sourceTree = "<group>"; };
+		1D529C222AE1BD4B00F818FA /* HeroDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroDetail.storyboard; sourceTree = "<group>"; };
+		1D529C242AE1BE3A00F818FA /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		1D529C262AE1BFF200F818FA /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
+		1D529C282AE1C0C200F818FA /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
+		1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnnotation.swift; sourceTree = "<group>"; };
 		1DB65DD82AD5C1C60046475E /* DragonBallAvanzado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallAvanzado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB65DDB2AD5C1C60046475E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DB65DDD2AD5C1C60046475E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +93,33 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		1D529C1E2AE1A16200F818FA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1D529C1F2AE1A18A00F818FA /* HeroeCoreData.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1D529C212AE1BD3700F818FA /* HeroDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1D529C2A2AE1CB0D00F818FA /* MapAnnotation */,
+				1D529C222AE1BD4B00F818FA /* HeroDetail.storyboard */,
+				1D529C242AE1BE3A00F818FA /* HeroDetailViewController.swift */,
+				1D529C262AE1BFF200F818FA /* HeroDetailViewModel.swift */,
+			);
+			path = HeroDetail;
+			sourceTree = "<group>";
+		};
+		1D529C2A2AE1CB0D00F818FA /* MapAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */,
+			);
+			path = MapAnnotation;
+			sourceTree = "<group>";
+		};
 		1DB65DCF2AD5C1C60046475E = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +143,7 @@
 				1DB65DDD2AD5C1C60046475E /* SceneDelegate.swift */,
 				1DB65DEC2AD5C1C90046475E /* Info.plist */,
 				1DB65DF52AD5C2810046475E /* Resources */,
+				1D529C1E2AE1A16200F818FA /* Utils */,
 				1DB65DF42AD5C27C0046475E /* Data */,
 				1DC637182ADF0C43002D420B /* Domain */,
 				1DB65DF32AD5C2700046475E /* Presentation */,
@@ -114,6 +154,7 @@
 		1DB65DF32AD5C2700046475E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				1D529C212AE1BD3700F818FA /* HeroDetail */,
 				1D529C172AE195F600F818FA /* Splash */,
 				1DF2076C2ADE987200A652F5 /* Heroes */,
 				1DB65DF92AD5C36C0046475E /* Login */,
@@ -196,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				1DC6371A2ADF0C67002D420B /* Hero.swift */,
+				1D529C282AE1C0C200F818FA /* HeroLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +331,7 @@
 				1DB65DEB2AD5C1C90046475E /* LaunchScreen.storyboard in Resources */,
 				1DF207792ADE9F2C00A652F5 /* HeroCellView.xib in Resources */,
 				1DB65DE82AD5C1C90046475E /* Assets.xcassets in Resources */,
+				1D529C232AE1BD4B00F818FA /* HeroDetail.storyboard in Resources */,
 				1DF2076E2ADE98A400A652F5 /* Heroes.storyboard in Resources */,
 				1DB65DE32AD5C1C60046475E /* Login.storyboard in Resources */,
 				1D529C192AE1960800F818FA /* Splash.storyboard in Resources */,
@@ -306,9 +349,11 @@
 				1DB65DE02AD5C1C60046475E /* LoginViewController.swift in Sources */,
 				1DB65DE62AD5C1C60046475E /* DragonBallAvanzado.xcdatamodeld in Sources */,
 				1DF207702ADE98C000A652F5 /* HeroesViewController.swift in Sources */,
+				1D529C202AE1A18A00F818FA /* HeroeCoreData.swift in Sources */,
 				1DC637172ADF0518002D420B /* CoreDataStack.swift in Sources */,
 				1DC256F22AD714B4008B907A /* SecureDataProvider.swift in Sources */,
 				1D529C1B2AE197A600F818FA /* SplashViewController.swift in Sources */,
+				1D529C2C2AE1CB2600F818FA /* HeroAnnotation.swift in Sources */,
 				1DF207722ADE98F800A652F5 /* HeroesViewModel.swift in Sources */,
 				1DC637152ADF02D7002D420B /* HeroDAO.swift in Sources */,
 				1DB65DDC2AD5C1C60046475E /* AppDelegate.swift in Sources */,
@@ -316,7 +361,10 @@
 				1DB65DFB2AD5CD540046475E /* LoginViewModel.swift in Sources */,
 				1DC256F42AD71997008B907A /* ApiProvider.swift in Sources */,
 				1DC6371B2ADF0C67002D420B /* Hero.swift in Sources */,
+				1D529C292AE1C0C200F818FA /* HeroLocation.swift in Sources */,
+				1D529C272AE1BFF200F818FA /* HeroDetailViewModel.swift in Sources */,
 				1DB65DDE2AD5C1C60046475E /* SceneDelegate.swift in Sources */,
+				1D529C252AE1BE3A00F818FA /* HeroDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

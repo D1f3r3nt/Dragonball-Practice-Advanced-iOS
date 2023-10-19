@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Delegate -
 protocol LoginViewControllerProtocol {
     var viewState: ((LoginViewState) -> Void)? {get set}
     var heroesViewModel: HeroesViewControllerDelegate { get }
@@ -14,6 +15,7 @@ protocol LoginViewControllerProtocol {
     func handleLoginPressed(email: String?, password: String?)
 }
 
+// MARK: - States -
 enum LoginViewState {
     case loading(_ isLoading: Bool)
     case showErrorEmail(_ error: String?)
@@ -21,9 +23,10 @@ enum LoginViewState {
     case navigateToNext
 }
 
+// MARK: - View -
 class LoginViewController: UIViewController {
 
-    // MARK: - Outlet
+    // MARK: - Outlets -
     @IBOutlet weak var emailRequired: UILabel!
     @IBOutlet weak var wrongPassword: UILabel!
     @IBOutlet weak var emailField: UITextField!
@@ -39,7 +42,7 @@ class LoginViewController: UIViewController {
         setObservers()
     }
 
-    // MARK: - Action
+    // MARK: - Actions -
     @IBAction func didTapLogin(_ sender: Any) {
         viewModel?.handleLoginPressed(
             email: emailField.text,
@@ -57,7 +60,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    // MARK: - Private
+    // MARK: - Privates -
     private func initViews() {
         // Para escuchar sus eventos
         emailField.delegate = self
@@ -102,6 +105,7 @@ class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions -
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch FieldType(rawValue: textField.tag) {

@@ -7,31 +7,46 @@
 
 import UIKit
 
+// MARK: - Delegate -
 protocol HeroesViewControllerDelegate {
     var viewState: ((HeroesViewState) -> Void)? { get set }
     
     func heroesCount() -> Int
     func onViewAppear()
     func heroBy(index: Int) -> Hero?
+    func heroDetailViewModel(index: Int) -> HeroDetailViewControllerProtocol
 }
 
+// MARK: - States -
 enum HeroesViewState {
     case loading(_ isLoading: Bool)
     case updateData
 }
 
+// MARK: - View -
 class HeroesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var loadingView: UIView!
+    
     var viewModel: HeroesViewControllerDelegate?
     
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setObservers()
         initViews()
         self.viewModel?.onViewAppear()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "HEROES_TO_HERO_DETAIL",
+              let index = sender as? Int,
+              let heroDetailViewController = segue.destination as? HeroDetailViewController,
+              let detailViewModel = viewModel?.heroDetailViewModel(index: index) else {
+            return
+        }
+        
+        heroDetailViewController.viewModel = detailViewModel
     }
     
     private func initViews() {
@@ -64,6 +79,7 @@ class HeroesViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions -
 extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel?.heroesCount() ?? 0
@@ -93,6 +109,6 @@ extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Navigation
+        performSegue(withIdentifier: "HEROES_TO_HERO_DETAIL", sender: indexPath.row)
     }
 }

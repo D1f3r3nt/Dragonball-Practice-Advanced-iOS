@@ -51,11 +51,22 @@
                     <connections>
                         <outlet property="loadingView" destination="VoR-dy-3e4" id="wfi-n1-XbD"/>
                         <outlet property="tableView" destination="Czf-b4-PfC" id="ssC-aM-YwT"/>
+                        <segue destination="97n-7a-Mt9" kind="show" identifier="HEROES_TO_HERO_DETAIL" id="YaR-bB-dgY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="sbi-Bx-RRX">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="HeroDetail" id="97n-7a-Mt9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AqB-No-L1Z"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gx9-YS-tJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="-74"/>
         </scene>
     </scenes>
     <resources>

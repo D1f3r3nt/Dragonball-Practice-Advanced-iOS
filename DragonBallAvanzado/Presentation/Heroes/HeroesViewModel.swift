@@ -9,6 +9,8 @@ import Foundation
 
 class HeroesViewModel: HeroesViewControllerDelegate {
 
+    private let heroCoreData: HeroCoreData = .init()
+    
     private let apiProvider: ApiProviderProtocol
     private let secureData: SecureDataProvierProtocol
     
@@ -24,6 +26,8 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         self.secureData = secureData
     }
     
+    //MARK: - Extended -
+    
     func onViewAppear() {
         self.viewState?(.loading(true))
         
@@ -37,15 +41,22 @@ class HeroesViewModel: HeroesViewControllerDelegate {
             self.apiProvider.getHeroes(by: nil, token: token) { heroes in
                 self.heroes = heroes
                 
-                /*
-                let moc = CoreDataStack.shared.persistentContainer.viewContext
-                let entityHero = NSEntityDescription.entity(forEntityName: HeroDAO.entityName, in: moc)
+                self.heroCoreData.manageHeroes(of: heroes)
                 
-                let heroDao = HeroDAO(entity: entityHero, insertInto: moc)
-                */
+                //TEST
+                // self.heroCoreData.testSaved()
+                
                 self.viewState?(.updateData)
             }
         }
+    }
+    
+    func heroDetailViewModel(index: Int) -> HeroDetailViewControllerProtocol {
+        HeroDetailViewModel(
+            hero: heroes[index],
+            apiProvider: apiProvider,
+            secureDataProvider: secureData
+        )
     }
     
     func heroBy(index: Int) -> Hero? {

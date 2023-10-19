@@ -26,11 +26,14 @@ class SplashViewModel: SplashViewControllerProtocol {
         self.secureData = secureData
     }
     
+    // MARK: - Extended -
     func handleViewDidLoad() {
-        if secureData.getToken() == nil {
-            viewState?(.navigateToLogin)
-        } else {
-            viewState?(.navigateToHeroes)
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(2)) { [weak self] in
+            if self?.secureData.getToken() == nil {
+                self?.viewState?(.navigateToLogin)
+            } else {
+                self?.viewState?(.navigateToHeroes)
+            }
         }
     }
     

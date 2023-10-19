@@ -36,28 +36,6 @@ final class LoginViewModel: LoginViewControllerProtocol {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func handleLoginPressed(email: String?, password: String?) {
-        viewState?(.loading(true))
-        
-        DispatchQueue.global().async {
-            guard self.isValid(email: email) else {
-                self.viewState?(.loading(false))
-                self.viewState?(.showErrorEmail("Email no valido"))
-                return
-            }
-            
-            guard self.isValid(password: password) else {
-                self.viewState?(.loading(false))
-                self.viewState?(.showErrorEmail("Contraseña incorrecta"))
-                return
-            }
-            
-            self.doLoginWith(email: email ?? "", password: password ?? "")
-        }
-        
-        
-    }
-    
     @objc func loginSucces(_ notification: Notification) {
         print(notification)
         
@@ -81,5 +59,28 @@ final class LoginViewModel: LoginViewControllerProtocol {
     
     private func doLoginWith(email: String, password: String) {
         apiProvider.login(for: email, with: password)
+    }
+    
+    // MARK: - Extended -
+    func handleLoginPressed(email: String?, password: String?) {
+        viewState?(.loading(true))
+        
+        DispatchQueue.global().async {
+            guard self.isValid(email: email) else {
+                self.viewState?(.loading(false))
+                self.viewState?(.showErrorEmail("Email no valido"))
+                return
+            }
+            
+            guard self.isValid(password: password) else {
+                self.viewState?(.loading(false))
+                self.viewState?(.showErrorEmail("Contraseña incorrecta"))
+                return
+            }
+            
+            self.doLoginWith(email: email ?? "", password: password ?? "")
+        }
+        
+        
     }
 }

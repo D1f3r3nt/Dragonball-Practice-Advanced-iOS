@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Delegate -
 protocol SplashViewControllerProtocol {
     var viewState: ((SpalshViewState) -> Void)? {get set}
     var heroesViewModel: HeroesViewControllerDelegate { get }
@@ -15,11 +16,13 @@ protocol SplashViewControllerProtocol {
     func handleViewDidLoad()
 }
 
+// MARK: - States -
 enum SpalshViewState {
     case navigateToLogin
     case navigateToHeroes
 }
 
+// MARK: - View -
 class SplashViewController: UIViewController {
 
     var viewModel: SplashViewControllerProtocol?
@@ -28,6 +31,12 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         setObservers()
         viewModel?.handleViewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
