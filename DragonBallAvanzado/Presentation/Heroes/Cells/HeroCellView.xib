@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeroCellView" rowHeight="214" id="fnA-3r-FgH" customClass="HeroCellView" customModule="DragonBallAvanzado" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="214"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fnA-3r-FgH" id="UEl-oB-sjB">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="214"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-Ev-hRW">
+                        <rect key="frame" x="36" y="8" width="321" height="200"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njb-57-dg6">
+                                <rect key="frame" x="8" y="8" width="305" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="SxD-RL-ZsM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Vsi-PI-rCu">
+                                <rect key="frame" x="8" y="49" width="305" height="120"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Djc-tf-Khe">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="LKE-BR-55k"/>
+                                            <constraint firstAttribute="width" secondItem="Djc-tf-Khe" secondAttribute="height" multiplier="1:1" id="UHE-YF-DN6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWQ-RC-g0L">
+                                        <rect key="frame" x="139" y="0.0" width="166" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="nTQ-6U-zTd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="njb-57-dg6" firstAttribute="top" secondItem="ff9-Ev-hRW" secondAttribute="top" constant="8" id="4xq-Tj-1IT"/>
+                            <constraint firstAttribute="height" constant="200" id="8pI-cf-y7J"/>
+                            <constraint firstItem="Vsi-PI-rCu" firstAttribute="leading" secondItem="ff9-Ev-hRW" secondAttribute="leading" constant="8" id="FqE-kr-gdj"/>
+                            <constraint firstAttribute="trailing" secondItem="njb-57-dg6" secondAttribute="trailing" constant="8" id="LVe-B4-hfc"/>
+                            <constraint firstAttribute="trailing" secondItem="Vsi-PI-rCu" secondAttribute="trailing" constant="8" id="Ls9-yx-bdF"/>
+                            <constraint firstItem="Vsi-PI-rCu" firstAttribute="top" secondItem="njb-57-dg6" secondAttribute="bottom" constant="16" id="SgV-T5-8DT"/>
+                            <constraint firstItem="njb-57-dg6" firstAttribute="leading" secondItem="ff9-Ev-hRW" secondAttribute="leading" constant="8" id="awd-cv-6Ao"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ff9-Ev-hRW" firstAttribute="top" secondItem="UEl-oB-sjB" secondAttribute="top" constant="8" id="JTi-Ex-NaX"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ff9-Ev-hRW" secondAttribute="bottom" constant="8" id="Nrw-aX-bSV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ff9-Ev-hRW" secondAttribute="trailing" constant="16" id="gta-eo-Zfs"/>
+                    <constraint firstItem="ff9-Ev-hRW" firstAttribute="leading" secondItem="UEl-oB-sjB" secondAttribute="leadingMargin" constant="16" id="nqQ-f9-Sob"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="ff9-Ev-hRW" id="yPj-KW-oht"/>
+                <outlet property="heroDescription" destination="bWQ-RC-g0L" id="oyL-hl-ORr"/>
+                <outlet property="name" destination="njb-57-dg6" id="kZs-19-YbE"/>
+                <outlet property="photo" destination="Djc-tf-Khe" id="ZNC-wB-KAg"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="-11"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

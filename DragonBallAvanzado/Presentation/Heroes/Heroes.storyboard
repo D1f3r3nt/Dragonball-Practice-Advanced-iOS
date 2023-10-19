@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Heroes View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HeroesViewController" id="Y6W-OH-hqX" customClass="HeroesViewController" customModule="DragonBallAvanzado" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Czf-b4-PfC">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoR-dy-3e4">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="mjF-N8-J2q">
+                                        <rect key="frame" x="186.66666666666666" y="369.66666666666669" width="20" height="20"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="mjF-N8-J2q" firstAttribute="centerY" secondItem="VoR-dy-3e4" secondAttribute="centerY" id="3Ef-qf-b7M"/>
+                                    <constraint firstItem="mjF-N8-J2q" firstAttribute="centerX" secondItem="VoR-dy-3e4" secondAttribute="centerX" id="Qv8-Ip-aj0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VoR-dy-3e4" secondAttribute="trailing" id="7qP-VP-RQZ"/>
+                            <constraint firstItem="Czf-b4-PfC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="PrM-PQ-G90"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Czf-b4-PfC" secondAttribute="bottom" id="SeH-3e-70N"/>
+                            <constraint firstItem="VoR-dy-3e4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dX6-pk-8IE"/>
+                            <constraint firstItem="Czf-b4-PfC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="esb-4c-3kl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Czf-b4-PfC" secondAttribute="trailing" id="i7X-CD-pz2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VoR-dy-3e4" secondAttribute="bottom" id="knY-zP-NqO"/>
+                            <constraint firstItem="VoR-dy-3e4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sym-Hu-xPT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingView" destination="VoR-dy-3e4" id="wfi-n1-XbD"/>
+                        <outlet property="tableView" destination="Czf-b4-PfC" id="ssC-aM-YwT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
