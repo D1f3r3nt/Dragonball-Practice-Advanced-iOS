@@ -46,6 +46,11 @@ class ApiProvider: ApiProviderProtocol {
             
             guard let data,
                   (response as? HTTPURLResponse)?.statusCode == 200 else {
+                NotificationCenter.default.post(
+                    name: NotificationCenter.apiProviderNotification,
+                    object: nil,
+                    userInfo: [NotificationCenter.tokenKey: nil]
+                )
                 return
             }
             

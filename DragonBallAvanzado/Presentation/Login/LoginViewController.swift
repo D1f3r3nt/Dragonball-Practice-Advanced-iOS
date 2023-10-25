@@ -20,6 +20,7 @@ enum LoginViewState {
     case loading(_ isLoading: Bool)
     case showErrorEmail(_ error: String?)
     case showErrorPassword(_ error: String?)
+    case invalidLogin
     case navigateToNext
 }
 
@@ -88,8 +89,11 @@ class LoginViewController: UIViewController {
                         self?.emailRequired.isHidden = error == nil || error?.isEmpty == true
                         
                     case .showErrorPassword(let error):
-                        self?.emailRequired.text = error
-                        self?.emailRequired.isHidden = error == nil || error?.isEmpty == true
+                        self?.wrongPassword.text = error
+                        self?.wrongPassword.isHidden = error == nil || error?.isEmpty == true
+                    
+                    case .invalidLogin:
+                        self?.showInvalidLogin()
                         
                     case .navigateToNext:
                         self?.performSegue(withIdentifier: "LOGIN_TO_HOME", sender: nil)
@@ -103,6 +107,16 @@ class LoginViewController: UIViewController {
         // Si se muestra el teclado que se oculte
         view.endEditing(true)
     }
+    
+    private func showInvalidLogin() {
+        let alert = UIAlertController(
+            title: "Not authorized",
+            message: "Your username or passowrd is not valid",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Got it!", style: .cancel))
+        self.present(alert, animated: true)
+    }
 }
 
 // MARK: - Extensions -
@@ -112,7 +126,7 @@ extension LoginViewController: UITextFieldDelegate {
             case .email:
                 emailRequired.isHidden = true
             case .password:
-                passwordField.isHidden = true
+                wrongPassword.isHidden = true
             default: break
         }
     }

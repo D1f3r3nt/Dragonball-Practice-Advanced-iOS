@@ -37,10 +37,10 @@ final class LoginViewModel: LoginViewControllerProtocol {
     }
     
     @objc func loginSucces(_ notification: Notification) {
-        print(notification)
-        
         guard let token = notification.userInfo?[NotificationCenter.tokenKey] as? String,
             !token.isEmpty else {
+            viewState?(.loading(false))
+            viewState?(.invalidLogin)
             return
         }
         
