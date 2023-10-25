@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Czf-b4-PfC">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="104" width="393" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjV-aV-BJQ">
-                                <rect key="frame" x="301.33333333333331" y="69" width="81.666666666666686" height="35"/>
+                                <rect key="frame" x="301.33333333333331" y="114" width="81.666666666666686" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log out">
                                     <color key="baseBackgroundColor" systemColor="systemGrayColor"/>
@@ -30,6 +30,17 @@
                                     <action selector="didTapLogOut:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LAF-yh-dZ2"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Heroes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzF-yo-Y5w">
+                                <rect key="frame" x="0.0" y="59" width="393" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4Tj-gz-m1C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didChangeSearch:" destination="Y6W-OH-hqX" eventType="editingChanged" id="IXO-Iu-lwO"/>
+                                </connections>
+                            </textField>
                             <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoR-dy-3e4">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
@@ -49,19 +60,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VoR-dy-3e4" secondAttribute="trailing" id="7qP-VP-RQZ"/>
-                            <constraint firstItem="Czf-b4-PfC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="PrM-PQ-G90"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Czf-b4-PfC" secondAttribute="bottom" id="SeH-3e-70N"/>
-                            <constraint firstItem="QjV-aV-BJQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="blt-Er-enC"/>
+                            <constraint firstItem="Czf-b4-PfC" firstAttribute="top" secondItem="pzF-yo-Y5w" secondAttribute="bottom" id="K0H-sf-OBk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Czf-b4-PfC" secondAttribute="bottom" id="THb-q2-gvd"/>
+                            <constraint firstItem="pzF-yo-Y5w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Vq0-yv-d5Q"/>
                             <constraint firstItem="VoR-dy-3e4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dX6-pk-8IE"/>
-                            <constraint firstItem="Czf-b4-PfC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="esb-4c-3kl"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Czf-b4-PfC" secondAttribute="trailing" id="i7X-CD-pz2"/>
+                            <constraint firstItem="Czf-b4-PfC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="db9-WW-8Xo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pzF-yo-Y5w" secondAttribute="trailing" id="i1d-XI-lBL"/>
+                            <constraint firstItem="pzF-yo-Y5w" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iSr-eR-xqg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VoR-dy-3e4" secondAttribute="bottom" id="knY-zP-NqO"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QjV-aV-BJQ" secondAttribute="trailing" constant="10" id="qN1-Vv-A52"/>
                             <constraint firstItem="VoR-dy-3e4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sym-Hu-xPT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Czf-b4-PfC" secondAttribute="trailing" id="vJg-Zt-hON"/>
+                            <constraint firstItem="QjV-aV-BJQ" firstAttribute="top" secondItem="pzF-yo-Y5w" secondAttribute="bottom" constant="10" id="xvx-tP-76q"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QjV-aV-BJQ" secondAttribute="trailing" constant="10" id="ydD-z4-jTZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loadingView" destination="VoR-dy-3e4" id="wfi-n1-XbD"/>
+                        <outlet property="serachBar" destination="pzF-yo-Y5w" id="KFT-Mt-5nj"/>
                         <outlet property="tableView" destination="Czf-b4-PfC" id="ssC-aM-YwT"/>
                         <segue destination="97n-7a-Mt9" kind="show" identifier="HEROES_TO_HERO_DETAIL" id="YaR-bB-dgY"/>
                         <segue destination="Bgb-hN-olg" kind="show" identifier="LOGOUT" id="X9f-BC-Ga7"/>

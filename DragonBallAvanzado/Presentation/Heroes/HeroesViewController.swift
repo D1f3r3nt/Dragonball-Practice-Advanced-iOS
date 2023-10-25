@@ -14,6 +14,7 @@ protocol HeroesViewControllerDelegate {
     func heroesCount() -> Int
     func onViewAppear()
     func heroBy(index: Int) -> Hero?
+    func filterHeroes(by heroName: String)
     func logout()
     func heroDetailViewModel(index: Int) -> HeroDetailViewControllerProtocol
     func splashViewModel() -> SplashViewControllerProtocol
@@ -31,6 +32,7 @@ class HeroesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var serachBar: UITextField!
     
     var viewModel: HeroesViewControllerDelegate?
     
@@ -50,6 +52,10 @@ class HeroesViewController: UIViewController {
         }
         
         heroDetailViewController.viewModel = detailViewModel
+    }
+    
+    @IBAction func didChangeSearch(_ sender: Any) {
+        self.viewModel?.filterHeroes(by: self.serachBar.text ?? "")
     }
     
     private func initViews() {

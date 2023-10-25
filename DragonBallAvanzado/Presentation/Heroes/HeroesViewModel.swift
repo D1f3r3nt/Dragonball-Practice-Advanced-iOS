@@ -16,7 +16,8 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     
     var viewState: ((HeroesViewState) -> Void)?
     
-    private var heroes: Heroes = []
+    private var heroesFromInternet: Heroes = []
+    private var heroesPrint: Heroes = []
     
     init(
         apiProvider: ApiProviderProtocol,
@@ -39,7 +40,8 @@ class HeroesViewModel: HeroesViewControllerDelegate {
             }
             
             self.apiProvider.getHeroes(by: nil, token: token) { heroes in
-                self.heroes = heroes
+                self.heroesFromInternet = heroes
+                self.heroesPrint = self.heroesFromInternet
                 
                 self.heroCoreData.manageHeroes(of: heroes)
                 
@@ -53,7 +55,7 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     
     func heroDetailViewModel(index: Int) -> HeroDetailViewControllerProtocol {
         HeroDetailViewModel(
-            hero: heroes[index],
+            hero: heroesPrint[index],
             apiProvider: apiProvider,
             secureDataProvider: secureData
         )
@@ -72,13 +74,25 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     
     func heroBy(index: Int) -> Hero? {
         if index >= 0 && index < heroesCount() {
-            return heroes[index]
+            return heroesPrint[index]
         } else {
             return nil
         }
     }
     
+    func filterHeroes(by heroName: String) {
+        if heroName.isEmpty {
+            heroesPrint = heroesFromInternet
+        } else {
+            heroesPrint = heroesFromInternet.filter { hero in
+                hero.name?.lowercased().contains(heroName.lowercased()) ?? true
+            }
+        }
+        
+        self.viewState?(.updateData)
+    }
+    
     func heroesCount() -> Int {
-        heroes.count
+        heroesPrint.count
     }
 }
