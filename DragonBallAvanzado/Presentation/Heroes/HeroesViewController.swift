@@ -16,6 +16,7 @@ protocol HeroesViewControllerDelegate {
     func heroBy(index: Int) -> Hero?
     func filterHeroes(by heroName: String)
     func logout()
+    func clearMemory()
     func heroDetailViewModel(index: Int) -> HeroDetailViewControllerProtocol
     func splashViewModel() -> SplashViewControllerProtocol
 }
@@ -25,6 +26,7 @@ enum HeroesViewState {
     case loading(_ isLoading: Bool)
     case updateData
     case logout
+    case fromApi
 }
 
 // MARK: - View -
@@ -33,6 +35,7 @@ class HeroesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var serachBar: UITextField!
+    @IBOutlet weak var clearButton: UIButton!
     
     var viewModel: HeroesViewControllerDelegate?
     
@@ -56,6 +59,15 @@ class HeroesViewController: UIViewController {
     
     @IBAction func didChangeSearch(_ sender: Any) {
         self.viewModel?.filterHeroes(by: self.serachBar.text ?? "")
+    }
+    
+    @IBAction func didTapClear(_ sender: Any) {
+        self.viewModel?.clearMemory()
+        self.clearButton.isHidden = true
+    }
+    
+    @IBAction func didTapLogOut(_ sender: Any) {
+        self.viewModel?.logout()
     }
     
     private func initViews() {
@@ -86,13 +98,12 @@ class HeroesViewController: UIViewController {
                     case .logout:
                         self?.navigationController?.popViewController(animated: true)
                         break
+                    case .fromApi:
+                    self?.clearButton.isHidden = true
+                        break
                 }
             }
         }
-    }
-    
-    @IBAction func didTapLogOut(_ sender: Any) {
-        self.viewModel?.logout()
     }
 }
 

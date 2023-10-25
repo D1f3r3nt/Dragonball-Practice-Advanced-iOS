@@ -39,16 +39,19 @@ class HeroesViewModel: HeroesViewControllerDelegate {
                 return
             }
             
-            self.apiProvider.getHeroes(by: nil, token: token) { heroes in
-                self.heroesFromInternet = heroes
-                self.heroesPrint = self.heroesFromInternet
+            // BDD
+            let dataHeroes = self.heroCoreData.getHeroes()
+            if !dataHeroes.isEmpty {
+                self.setClassData(of: dataHeroes)
+                print("FROM BDD")
                 
-                self.heroCoreData.manageHeroes(of: heroes)
-                
-                //TEST
-                // self.heroCoreData.testSaved()
-                
-                self.viewState?(.updateData)
+            // API
+            } else {
+                self.apiProvider.getHeroes(by: nil, token: token) { heroes in
+                    self.setClassData(of: heroes, save: true)
+                }
+                self.viewState?(.fromApi)
+                print("FROM API")
             }
         }
     }
@@ -70,6 +73,11 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     func logout() {
         secureData.clear()
         viewState?(.logout)
+    }
+    
+    func clearMemory() {
+        self.heroCoreData.deleteAll()
+        self.onViewAppear()
     }
     
     func heroBy(index: Int) -> Hero? {
@@ -94,5 +102,16 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     
     func heroesCount() -> Int {
         heroesPrint.count
+    }
+    
+    private func setClassData(of heroes: Heroes, save: Bool = false) {
+        self.heroesFromInternet = heroes
+        self.heroesPrint = self.heroesFromInternet
+        
+        if (save) {
+            self.heroCoreData.manageHeroes(of: heroes)
+        }
+        
+        self.viewState?(.updateData)
     }
 }

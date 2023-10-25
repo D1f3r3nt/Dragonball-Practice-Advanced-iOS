@@ -15,17 +15,16 @@ class HeroCoreData {
         saveHeroes(of: heroes)
     }
     
-    func testSaved() {
+    func getHeroes() -> Heroes {
         let moc = CoreDataStack.shared.persistentContainer.viewContext
         let fetch = NSFetchRequest<HeroDAO>(entityName: "HeroDAO")
         
         guard let persons = try? moc.fetch(fetch)
             else {
-            return
+            return []
         }
         
-        print(persons.count)
-        print(persons.first ?? "NONE Data")
+        return HeroMapper.mapperDao(of: persons)
     }
     
     private func saveHeroes(of heroes: Heroes) {
@@ -47,7 +46,7 @@ class HeroCoreData {
         try? moc.save()
     }
     
-    private func deleteAll() {
+    public func deleteAll() {
         let moc = CoreDataStack.shared.persistentContainer.viewContext
         let requestAllHeroes = NSFetchRequest<HeroDAO>(entityName: "HeroDAO")
         
