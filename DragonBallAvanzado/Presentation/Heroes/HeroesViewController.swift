@@ -14,13 +14,16 @@ protocol HeroesViewControllerDelegate {
     func heroesCount() -> Int
     func onViewAppear()
     func heroBy(index: Int) -> Hero?
+    func logout()
     func heroDetailViewModel(index: Int) -> HeroDetailViewControllerProtocol
+    func splashViewModel() -> SplashViewControllerProtocol
 }
 
 // MARK: - States -
 enum HeroesViewState {
     case loading(_ isLoading: Bool)
     case updateData
+    case logout
 }
 
 // MARK: - View -
@@ -73,9 +76,17 @@ class HeroesViewController: UIViewController {
                     case .updateData:
                         self?.tableView.reloadData()
                         break
+                    
+                    case .logout:
+                        self?.navigationController?.popViewController(animated: true)
+                        break
                 }
             }
         }
+    }
+    
+    @IBAction func didTapLogOut(_ sender: Any) {
+        self.viewModel?.logout()
     }
 }
 

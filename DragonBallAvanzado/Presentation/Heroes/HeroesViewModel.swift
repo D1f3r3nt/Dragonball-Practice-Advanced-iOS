@@ -59,6 +59,17 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         )
     }
     
+    func splashViewModel() -> SplashViewControllerProtocol {
+        SplashViewModel(
+            secureData: secureData
+        )
+    }
+    
+    func logout() {
+        secureData.clear()
+        viewState?(.logout)
+    }
+    
     func heroBy(index: Int) -> Hero? {
         if index >= 0 && index < heroesCount() {
             return heroes[index]

@@ -16,10 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Czf-b4-PfC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Czf-b4-PfC">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjV-aV-BJQ">
+                                <rect key="frame" x="301.33333333333331" y="69" width="81.666666666666686" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Log out">
+                                    <color key="baseBackgroundColor" systemColor="systemGrayColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapLogOut:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LAF-yh-dZ2"/>
+                                </connections>
+                            </button>
                             <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoR-dy-3e4">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
@@ -41,10 +51,12 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VoR-dy-3e4" secondAttribute="trailing" id="7qP-VP-RQZ"/>
                             <constraint firstItem="Czf-b4-PfC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="PrM-PQ-G90"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Czf-b4-PfC" secondAttribute="bottom" id="SeH-3e-70N"/>
+                            <constraint firstItem="QjV-aV-BJQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="blt-Er-enC"/>
                             <constraint firstItem="VoR-dy-3e4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dX6-pk-8IE"/>
                             <constraint firstItem="Czf-b4-PfC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="esb-4c-3kl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Czf-b4-PfC" secondAttribute="trailing" id="i7X-CD-pz2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VoR-dy-3e4" secondAttribute="bottom" id="knY-zP-NqO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QjV-aV-BJQ" secondAttribute="trailing" constant="10" id="qN1-Vv-A52"/>
                             <constraint firstItem="VoR-dy-3e4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sym-Hu-xPT"/>
                         </constraints>
                     </view>
@@ -52,26 +64,40 @@
                         <outlet property="loadingView" destination="VoR-dy-3e4" id="wfi-n1-XbD"/>
                         <outlet property="tableView" destination="Czf-b4-PfC" id="ssC-aM-YwT"/>
                         <segue destination="97n-7a-Mt9" kind="show" identifier="HEROES_TO_HERO_DETAIL" id="YaR-bB-dgY"/>
+                        <segue destination="Bgb-hN-olg" kind="show" identifier="LOGOUT" id="X9f-BC-Ga7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--HeroDetail-->
         <scene sceneID="sbi-Bx-RRX">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="HeroDetail" id="97n-7a-Mt9" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="HeroDetail" storyboardName="HeroDetail" id="97n-7a-Mt9" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="AqB-No-L1Z"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gx9-YS-tJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="-74"/>
+            <point key="canvasLocation" x="840" y="-163"/>
+        </scene>
+        <!--Splash-->
+        <scene sceneID="DJ2-rk-2NE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Splash" id="Bgb-hN-olg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wLu-hx-TWU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1V-aK-IUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="80"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
