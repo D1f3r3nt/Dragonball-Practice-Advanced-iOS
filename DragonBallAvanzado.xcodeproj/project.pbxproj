@@ -17,6 +17,9 @@
 		1D529C292AE1C0C200F818FA /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C282AE1C0C200F818FA /* HeroLocation.swift */; };
 		1D529C2C2AE1CB2600F818FA /* HeroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */; };
 		1DA01DA22AE9C2DD00AC2E70 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */; };
+		1DA01DA42AE9CB9200AC2E70 /* LocationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */; };
+		1DA01DA62AE9CC7900AC2E70 /* LocationCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */; };
+		1DA01DA82AE9D04800AC2E70 /* LocationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA72AE9D04800AC2E70 /* LocationMapper.swift */; };
 		1DB65DDC2AD5C1C60046475E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB65DDB2AD5C1C60046475E /* AppDelegate.swift */; };
 		1DB65DDE2AD5C1C60046475E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB65DDD2AD5C1C60046475E /* SceneDelegate.swift */; };
 		1DB65DE02AD5C1C60046475E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB65DDF2AD5C1C60046475E /* LoginViewController.swift */; };
@@ -50,6 +53,9 @@
 		1D529C282AE1C0C200F818FA /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
 		1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnnotation.swift; sourceTree = "<group>"; };
 		1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
+		1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDAO.swift; sourceTree = "<group>"; };
+		1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoreData.swift; sourceTree = "<group>"; };
+		1DA01DA72AE9D04800AC2E70 /* LocationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapper.swift; sourceTree = "<group>"; };
 		1DB65DD82AD5C1C60046475E /* DragonBallAvanzado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallAvanzado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB65DDB2AD5C1C60046475E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DB65DDD2AD5C1C60046475E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1D529C1F2AE1A18A00F818FA /* HeroeCoreData.swift */,
+				1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */,
+				1DA01DA72AE9D04800AC2E70 /* LocationMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				1DC637142ADF02D7002D420B /* HeroDAO.swift */,
+				1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,8 +378,11 @@
 				1DC637152ADF02D7002D420B /* HeroDAO.swift in Sources */,
 				1DB65DDC2AD5C1C60046475E /* AppDelegate.swift in Sources */,
 				1DF207752ADE9D1900A652F5 /* HeroCellView.swift in Sources */,
+				1DA01DA82AE9D04800AC2E70 /* LocationMapper.swift in Sources */,
 				1DB65DFB2AD5CD540046475E /* LoginViewModel.swift in Sources */,
 				1DC256F42AD71997008B907A /* ApiProvider.swift in Sources */,
+				1DA01DA42AE9CB9200AC2E70 /* LocationDAO.swift in Sources */,
+				1DA01DA62AE9CC7900AC2E70 /* LocationCoreData.swift in Sources */,
 				1DC6371B2ADF0C67002D420B /* Hero.swift in Sources */,
 				1D529C292AE1C0C200F818FA /* HeroLocation.swift in Sources */,
 				1D529C272AE1BFF200F818FA /* HeroDetailViewModel.swift in Sources */,

@@ -17,7 +17,7 @@ class HeroCoreData {
     
     func getHeroes() -> Heroes {
         let moc = CoreDataStack.shared.persistentContainer.viewContext
-        let fetch = NSFetchRequest<HeroDAO>(entityName: "HeroDAO")
+        let fetch = NSFetchRequest<HeroDAO>(entityName: HeroDAO.entityName)
         
         guard let persons = try? moc.fetch(fetch)
             else {
@@ -48,7 +48,7 @@ class HeroCoreData {
     
     public func deleteAll() {
         let moc = CoreDataStack.shared.persistentContainer.viewContext
-        let requestAllHeroes = NSFetchRequest<HeroDAO>(entityName: "HeroDAO")
+        let requestAllHeroes = NSFetchRequest<HeroDAO>(entityName: HeroDAO.entityName)
         
         guard let persons = try? moc.fetch(requestAllHeroes)
             else {

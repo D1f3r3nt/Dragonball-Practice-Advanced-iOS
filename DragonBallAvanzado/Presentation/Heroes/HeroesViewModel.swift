@@ -10,6 +10,7 @@ import Foundation
 class HeroesViewModel: HeroesViewControllerDelegate {
 
     private let heroCoreData: HeroCoreData = .init()
+    private let locationCoreData: LocationCoreData = .init()
     
     private let apiProvider: ApiProviderProtocol
     private let secureData: SecureDataProvierProtocol
@@ -77,6 +78,7 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     
     func clearMemory() {
         self.heroCoreData.deleteAll()
+        self.locationCoreData.deleteAll()
         self.onViewAppear()
     }
     

@@ -12,6 +12,8 @@ class HeroDetailViewModel: HeroDetailViewControllerProtocol {
     private let apiProvider: ApiProviderProtocol
     private let secureDataProvider: SecureDataProvierProtocol
     
+    private let locationCoreData = LocationCoreData()
+    
     var state: ((HeroDetailViewState) -> Void)?
     
     private var hero: Hero
@@ -39,12 +41,26 @@ class HeroDetailViewModel: HeroDetailViewControllerProtocol {
                 return
             }
             
-            self.apiProvider.getLocations(
-                by: self.hero.id,
-                token: token
-            ) { [weak self] heroLocation in
-                self?.heroLocation = heroLocation
-                self?.state?(.update(hero: self?.hero, locations: heroLocation))
+            // BDD
+            let dataLocations = self.locationCoreData.getLocations(by: self.hero.id ?? "")
+            if !dataLocations.isEmpty {
+                self.heroLocation = dataLocations
+                self.state?(.update(hero: self.hero, locations: dataLocations))
+                print("FROM BDD")
+                
+            // API
+            } else {
+                self.apiProvider.getLocations(
+                    by: self.hero.id,
+                    token: token
+                ) { [weak self] heroLocation in
+                    self?.heroLocation = heroLocation
+                    
+                    self?.locationCoreData.manageLocations(of: heroLocation)
+                    
+                    self?.state?(.update(hero: self?.hero, locations: heroLocation))
+                }
+                print("FROM API")
             }
         }
     }

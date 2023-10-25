@@ -9,6 +9,7 @@
     </entity>
     <entity name="LocationDAO" representedClassName="LocationDAO" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="hero" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="latitud" optional="YES" attributeType="String"/>
         <attribute name="longitud" optional="YES" attributeType="String"/>

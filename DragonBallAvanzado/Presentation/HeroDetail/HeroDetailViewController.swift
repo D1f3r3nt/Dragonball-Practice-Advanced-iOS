@@ -38,6 +38,7 @@ class HeroDetailViewController: UIViewController {
         setObservers()
         viewModel?.handleViewDidLoad()
     }
+    
     // MARK: - Actions -
     @IBAction func didTapBackButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
