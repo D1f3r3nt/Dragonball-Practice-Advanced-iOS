@@ -44,7 +44,7 @@ class HeroesViewModel: HeroesViewControllerDelegate {
             let dataHeroes = self.heroCoreData.getHeroes()
             if !dataHeroes.isEmpty {
                 self.setClassData(of: dataHeroes)
-                print("FROM BDD")
+                print("HEROES - FROM BDD")
                 
             // API
             } else {
@@ -52,7 +52,7 @@ class HeroesViewModel: HeroesViewControllerDelegate {
                     self.setClassData(of: heroes, save: true)
                 }
                 self.viewState?(.fromApi)
-                print("FROM API")
+                print("HEROES - FROM API")
             }
         }
     }

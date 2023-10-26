@@ -46,7 +46,7 @@ class HeroDetailViewModel: HeroDetailViewControllerProtocol {
             if !dataLocations.isEmpty {
                 self.heroLocation = dataLocations
                 self.state?(.update(hero: self.hero, locations: dataLocations))
-                print("FROM BDD")
+                print("DETAIL - FROM BDD")
                 
             // API
             } else {
@@ -60,7 +60,7 @@ class HeroDetailViewModel: HeroDetailViewControllerProtocol {
                     
                     self?.state?(.update(hero: self?.hero, locations: heroLocation))
                 }
-                print("FROM API")
+                print("DETAIL - FROM API")
             }
         }
     }
