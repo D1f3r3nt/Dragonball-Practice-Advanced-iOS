@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Delegate -
-protocol ApiProviderProtocol {
+public protocol ApiProviderProtocol {
     func login(for user: String, with password: String)
     func getHeroes(by name: String?, token: String, completion: ((Heroes) -> Void)?)
     func getLocations(by heroId: String?, token: String, completion: ((HeroLocations) -> Void)?)
@@ -143,7 +143,7 @@ class ApiProvider: ApiProviderProtocol {
     }
 }
 
-extension NotificationCenter {
+public extension NotificationCenter {
     static let apiProviderNotification = Notification.Name("NotificationApiProvider")
     static let tokenKey = "TOKEN"
 }

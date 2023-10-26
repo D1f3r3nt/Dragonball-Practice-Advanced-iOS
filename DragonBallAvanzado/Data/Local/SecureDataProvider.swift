@@ -8,7 +8,7 @@
 import Foundation
 import KeychainSwift
 
-protocol SecureDataProvierProtocol {
+public protocol SecureDataProvierProtocol {
     func save(token: String)
     func getToken() -> String?
     func clear()

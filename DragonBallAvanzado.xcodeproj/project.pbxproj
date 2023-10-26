@@ -16,7 +16,10 @@
 		1D529C272AE1BFF200F818FA /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C262AE1BFF200F818FA /* HeroDetailViewModel.swift */; };
 		1D529C292AE1C0C200F818FA /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C282AE1C0C200F818FA /* HeroLocation.swift */; };
 		1D529C2C2AE1CB2600F818FA /* HeroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */; };
-		1D85A9132AEADB0A00D53D12 /* SecureDataProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9122AEADB0A00D53D12 /* SecureDataProviderTest.swift */; };
+		1D85A9212AEADF1D00D53D12 /* SecureDataProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9122AEADB0A00D53D12 /* SecureDataProviderTest.swift */; };
+		1D85A9242AEAE04C00D53D12 /* ApiProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9232AEAE04C00D53D12 /* ApiProviderTest.swift */; };
+		1D85A9272AEAE25300D53D12 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9262AEAE25300D53D12 /* MockApiService.swift */; };
+		1D85A92F2AEAE97D00D53D12 /* ValidationLoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A92E2AEAE97D00D53D12 /* ValidationLoginTest.swift */; };
 		1DA01DA22AE9C2DD00AC2E70 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */; };
 		1DA01DA42AE9CB9200AC2E70 /* LocationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */; };
 		1DA01DA62AE9CC7900AC2E70 /* LocationCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */; };
@@ -43,6 +46,16 @@
 		1DF207792ADE9F2C00A652F5 /* HeroCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF207782ADE9F2C00A652F5 /* HeroCellView.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1D85A91C2AEADEFA00D53D12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DB65DD02AD5C1C60046475E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DB65DD72AD5C1C60046475E;
+			remoteInfo = DragonBallAvanzado;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1D529C182AE1960800F818FA /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		1D529C1A2AE197A600F818FA /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +67,10 @@
 		1D529C282AE1C0C200F818FA /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
 		1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnnotation.swift; sourceTree = "<group>"; };
 		1D85A9122AEADB0A00D53D12 /* SecureDataProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProviderTest.swift; sourceTree = "<group>"; };
+		1D85A9182AEADEFA00D53D12 /* DragonBallAvanzadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBallAvanzadoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D85A9232AEAE04C00D53D12 /* ApiProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTest.swift; sourceTree = "<group>"; };
+		1D85A9262AEAE25300D53D12 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
+		1D85A92E2AEAE97D00D53D12 /* ValidationLoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationLoginTest.swift; sourceTree = "<group>"; };
 		1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
 		1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDAO.swift; sourceTree = "<group>"; };
 		1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoreData.swift; sourceTree = "<group>"; };
@@ -81,6 +98,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D85A9152AEADEFA00D53D12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DB65DD52AD5C1C60046475E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,17 +155,10 @@
 			path = MapAnnotation;
 			sourceTree = "<group>";
 		};
-		1D85A90F2AEAD65500D53D12 /* DragonBallAvanzadoTests */ = {
-			isa = PBXGroup;
-			children = (
-				1D85A9102AEADAE600D53D12 /* Data */,
-			);
-			path = DragonBallAvanzadoTests;
-			sourceTree = "<group>";
-		};
 		1D85A9102AEADAE600D53D12 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1D85A9222AEAE03700D53D12 /* Api */,
 				1D85A9112AEADAEE00D53D12 /* Local */,
 			);
 			path = Data;
@@ -153,6 +170,48 @@
 				1D85A9122AEADB0A00D53D12 /* SecureDataProviderTest.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		1D85A9192AEADEFA00D53D12 /* DragonBallAvanzadoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A92C2AEAE95400D53D12 /* Presentation */,
+				1D85A9102AEADAE600D53D12 /* Data */,
+			);
+			path = DragonBallAvanzadoTests;
+			sourceTree = "<group>";
+		};
+		1D85A9222AEAE03700D53D12 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A9252AEAE23700D53D12 /* Mock */,
+				1D85A9232AEAE04C00D53D12 /* ApiProviderTest.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		1D85A9252AEAE23700D53D12 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A9262AEAE25300D53D12 /* MockApiService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		1D85A92C2AEAE95400D53D12 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A92D2AEAE95E00D53D12 /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		1D85A92D2AEAE95E00D53D12 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A92E2AEAE97D00D53D12 /* ValidationLoginTest.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		1DA01DA02AE9C2C800AC2E70 /* Mappers */ = {
@@ -168,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB65DDA2AD5C1C60046475E /* DragonBallAvanzado */,
-				1D85A90F2AEAD65500D53D12 /* DragonBallAvanzadoTests */,
+				1D85A9192AEADEFA00D53D12 /* DragonBallAvanzadoTests */,
 				1DB65DD92AD5C1C60046475E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -177,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB65DD82AD5C1C60046475E /* DragonBallAvanzado.app */,
+				1D85A9182AEADEFA00D53D12 /* DragonBallAvanzadoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,6 +372,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1D85A9172AEADEFA00D53D12 /* DragonBallAvanzadoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D85A91E2AEADEFA00D53D12 /* Build configuration list for PBXNativeTarget "DragonBallAvanzadoTests" */;
+			buildPhases = (
+				1D85A9142AEADEFA00D53D12 /* Sources */,
+				1D85A9152AEADEFA00D53D12 /* Frameworks */,
+				1D85A9162AEADEFA00D53D12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D85A91D2AEADEFA00D53D12 /* PBXTargetDependency */,
+			);
+			name = DragonBallAvanzadoTests;
+			productName = DragonBallAvanzadoTests;
+			productReference = 1D85A9182AEADEFA00D53D12 /* DragonBallAvanzadoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1DB65DD72AD5C1C60046475E /* DragonBallAvanzado */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DB65DEF2AD5C1C90046475E /* Build configuration list for PBXNativeTarget "DragonBallAvanzado" */;
@@ -343,6 +421,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					1D85A9172AEADEFA00D53D12 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 1DB65DD72AD5C1C60046475E;
+					};
 					1DB65DD72AD5C1C60046475E = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -366,11 +448,19 @@
 			projectRoot = "";
 			targets = (
 				1DB65DD72AD5C1C60046475E /* DragonBallAvanzado */,
+				1D85A9172AEADEFA00D53D12 /* DragonBallAvanzadoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D85A9162AEADEFA00D53D12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DB65DD62AD5C1C60046475E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,6 +478,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D85A9142AEADEFA00D53D12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D85A92F2AEAE97D00D53D12 /* ValidationLoginTest.swift in Sources */,
+				1D85A9272AEAE25300D53D12 /* MockApiService.swift in Sources */,
+				1D85A9212AEADF1D00D53D12 /* SecureDataProviderTest.swift in Sources */,
+				1D85A9242AEAE04C00D53D12 /* ApiProviderTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DB65DD42AD5C1C60046475E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,7 +510,6 @@
 				1DB65DFB2AD5CD540046475E /* LoginViewModel.swift in Sources */,
 				1DC256F42AD71997008B907A /* ApiProvider.swift in Sources */,
 				1DA01DA42AE9CB9200AC2E70 /* LocationDAO.swift in Sources */,
-				1D85A9132AEADB0A00D53D12 /* SecureDataProviderTest.swift in Sources */,
 				1DA01DA62AE9CC7900AC2E70 /* LocationCoreData.swift in Sources */,
 				1DC6371B2ADF0C67002D420B /* Hero.swift in Sources */,
 				1D529C292AE1C0C200F818FA /* HeroLocation.swift in Sources */,
@@ -421,6 +521,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D85A91D2AEADEFA00D53D12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DB65DD72AD5C1C60046475E /* DragonBallAvanzado */;
+			targetProxy = 1D85A91C2AEADEFA00D53D12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1DB65DE12AD5C1C60046475E /* Login.storyboard */ = {
@@ -442,6 +550,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1D85A91F2AEADEFA00D53D12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diferent.DragonBallAvanzadoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DragonBallAvanzado.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DragonBallAvanzado";
+			};
+			name = Debug;
+		};
+		1D85A9202AEADEFA00D53D12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diferent.DragonBallAvanzadoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DragonBallAvanzado.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DragonBallAvanzado";
+			};
+			name = Release;
+		};
 		1DB65DED2AD5C1C90046475E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -611,6 +753,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D85A91E2AEADEFA00D53D12 /* Build configuration list for PBXNativeTarget "DragonBallAvanzadoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D85A91F2AEADEFA00D53D12 /* Debug */,
+				1D85A9202AEADEFA00D53D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1DB65DD32AD5C1C60046475E /* Build configuration list for PBXProject "DragonBallAvanzado" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias HeroLocations = [HeroLocation]
+public typealias HeroLocations = [HeroLocation]
 
-struct HeroLocation: Codable {
+public struct HeroLocation: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case hero
@@ -18,9 +18,9 @@ struct HeroLocation: Codable {
         case date = "dateShow"
     }
     
-    let id: String?
-    let latitude: String?
-    let longitude: String?
-    let date: String?
-    let hero: Hero?
+    public let id: String?
+    public let latitude: String?
+    public let longitude: String?
+    public let date: String?
+    public let hero: Hero?
 }
