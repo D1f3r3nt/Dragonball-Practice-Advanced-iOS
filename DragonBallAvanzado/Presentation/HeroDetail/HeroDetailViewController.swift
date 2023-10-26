@@ -64,7 +64,6 @@ class HeroDetailViewController: UIViewController {
     
     private func updateViews(hero: Hero?, heroLocations: HeroLocations) {
         image.kf.setImage(with: URL(string: hero?.photo ?? ""))
-        makeRounded(image: image)
         
         nameLabel.text = hero?.name
         descriptionLabel.text = hero?.description
@@ -81,13 +80,5 @@ class HeroDetailViewController: UIViewController {
                 )
             )
         }
-    }
-
-    private func makeRounded(image: UIImageView) {
-        image.layer.borderColor = UIColor.white.cgColor.copy(alpha: 0.6)
-        image.layer.borderWidth = 1
-        image.clipsToBounds = true
-        image.layer.cornerRadius = image.frame.height / 2
-        image.layer.masksToBounds = false
     }
 }

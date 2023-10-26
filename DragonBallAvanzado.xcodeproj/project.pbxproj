@@ -20,6 +20,10 @@
 		1D85A9242AEAE04C00D53D12 /* ApiProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9232AEAE04C00D53D12 /* ApiProviderTest.swift */; };
 		1D85A9272AEAE25300D53D12 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9262AEAE25300D53D12 /* MockApiService.swift */; };
 		1D85A92F2AEAE97D00D53D12 /* ValidationLoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A92E2AEAE97D00D53D12 /* ValidationLoginTest.swift */; };
+		1D85A9322AEAED7800D53D12 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D85A9312AEAED7800D53D12 /* Map.storyboard */; };
+		1D85A9342AEAEE5800D53D12 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9332AEAEE5800D53D12 /* MapViewController.swift */; };
+		1D85A9362AEAEF8B00D53D12 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9352AEAEF8B00D53D12 /* MapViewModel.swift */; };
+		1D85A9392AEAFC0400D53D12 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9382AEAFC0400D53D12 /* MapAnnotation.swift */; };
 		1DA01DA22AE9C2DD00AC2E70 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */; };
 		1DA01DA42AE9CB9200AC2E70 /* LocationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */; };
 		1DA01DA62AE9CC7900AC2E70 /* LocationCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */; };
@@ -71,6 +75,10 @@
 		1D85A9232AEAE04C00D53D12 /* ApiProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTest.swift; sourceTree = "<group>"; };
 		1D85A9262AEAE25300D53D12 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		1D85A92E2AEAE97D00D53D12 /* ValidationLoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationLoginTest.swift; sourceTree = "<group>"; };
+		1D85A9312AEAED7800D53D12 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		1D85A9332AEAEE5800D53D12 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1D85A9352AEAEF8B00D53D12 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		1D85A9382AEAFC0400D53D12 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
 		1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDAO.swift; sourceTree = "<group>"; };
 		1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoreData.swift; sourceTree = "<group>"; };
@@ -214,6 +222,25 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		1D85A9302AEAED6500D53D12 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A9372AEAFBE700D53D12 /* MapAnnotation */,
+				1D85A9312AEAED7800D53D12 /* Map.storyboard */,
+				1D85A9332AEAEE5800D53D12 /* MapViewController.swift */,
+				1D85A9352AEAEF8B00D53D12 /* MapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1D85A9372AEAFBE700D53D12 /* MapAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A9382AEAFC0400D53D12 /* MapAnnotation.swift */,
+			);
+			path = MapAnnotation;
+			sourceTree = "<group>";
+		};
 		1DA01DA02AE9C2C800AC2E70 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +286,7 @@
 		1DB65DF32AD5C2700046475E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				1D85A9302AEAED6500D53D12 /* Map */,
 				1D529C212AE1BD3700F818FA /* HeroDetail */,
 				1D529C172AE195F600F818FA /* Splash */,
 				1DF2076C2ADE987200A652F5 /* Heroes */,
@@ -468,6 +496,7 @@
 				1DB65DEB2AD5C1C90046475E /* LaunchScreen.storyboard in Resources */,
 				1DF207792ADE9F2C00A652F5 /* HeroCellView.xib in Resources */,
 				1DB65DE82AD5C1C90046475E /* Assets.xcassets in Resources */,
+				1D85A9322AEAED7800D53D12 /* Map.storyboard in Resources */,
 				1D529C232AE1BD4B00F818FA /* HeroDetail.storyboard in Resources */,
 				1DF2076E2ADE98A400A652F5 /* Heroes.storyboard in Resources */,
 				1DB65DE32AD5C1C60046475E /* Login.storyboard in Resources */,
@@ -495,12 +524,14 @@
 			files = (
 				1D529C1D2AE197BD00F818FA /* SplashViewModel.swift in Sources */,
 				1DB65DE02AD5C1C60046475E /* LoginViewController.swift in Sources */,
+				1D85A9392AEAFC0400D53D12 /* MapAnnotation.swift in Sources */,
 				1DB65DE62AD5C1C60046475E /* DragonBallAvanzado.xcdatamodeld in Sources */,
 				1DF207702ADE98C000A652F5 /* HeroesViewController.swift in Sources */,
 				1D529C202AE1A18A00F818FA /* HeroeCoreData.swift in Sources */,
 				1DC637172ADF0518002D420B /* CoreDataStack.swift in Sources */,
 				1DC256F22AD714B4008B907A /* SecureDataProvider.swift in Sources */,
 				1D529C1B2AE197A600F818FA /* SplashViewController.swift in Sources */,
+				1D85A9342AEAEE5800D53D12 /* MapViewController.swift in Sources */,
 				1D529C2C2AE1CB2600F818FA /* HeroAnnotation.swift in Sources */,
 				1DF207722ADE98F800A652F5 /* HeroesViewModel.swift in Sources */,
 				1DC637152ADF02D7002D420B /* HeroDAO.swift in Sources */,
@@ -509,6 +540,7 @@
 				1DA01DA82AE9D04800AC2E70 /* LocationMapper.swift in Sources */,
 				1DB65DFB2AD5CD540046475E /* LoginViewModel.swift in Sources */,
 				1DC256F42AD71997008B907A /* ApiProvider.swift in Sources */,
+				1D85A9362AEAEF8B00D53D12 /* MapViewModel.swift in Sources */,
 				1DA01DA42AE9CB9200AC2E70 /* LocationDAO.swift in Sources */,
 				1DA01DA62AE9CC7900AC2E70 /* LocationCoreData.swift in Sources */,
 				1DC6371B2ADF0C67002D420B /* Hero.swift in Sources */,

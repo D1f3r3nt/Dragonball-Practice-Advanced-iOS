@@ -19,6 +19,7 @@ protocol HeroesViewControllerDelegate {
     func clearMemory()
     func heroDetailViewModel(index: Int) -> HeroDetailViewControllerProtocol
     func splashViewModel() -> SplashViewControllerProtocol
+    func mapViewModel() -> MapViewControllerProtocol
 }
 
 // MARK: - States -
@@ -47,14 +48,24 @@ class HeroesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "HEROES_TO_HERO_DETAIL",
-              let index = sender as? Int,
-              let heroDetailViewController = segue.destination as? HeroDetailViewController,
-              let detailViewModel = viewModel?.heroDetailViewModel(index: index) else {
-            return
+        if segue.identifier == "HEROES_TO_HERO_DETAIL" {
+            guard let index = sender as? Int,
+                  let heroDetailViewController = segue.destination as? HeroDetailViewController,
+                  let detailViewModel = viewModel?.heroDetailViewModel(index: index) else {
+                return
+            }
+            
+            heroDetailViewController.viewModel = detailViewModel
         }
         
-        heroDetailViewController.viewModel = detailViewModel
+        if segue.identifier == "HEROES_TO_MAP" {
+            guard let mapViewController = segue.destination as? MapViewController,
+                  let mapViewModel = viewModel?.mapViewModel() else {
+                return
+            }
+            
+            mapViewController.viewModel = mapViewModel
+        }
     }
     
     @IBAction func didChangeSearch(_ sender: Any) {
@@ -68,6 +79,10 @@ class HeroesViewController: UIViewController {
     
     @IBAction func didTapLogOut(_ sender: Any) {
         self.viewModel?.logout()
+    }
+    
+    @IBAction func didTapMap(_ sender: Any) {
+        performSegue(withIdentifier: "HEROES_TO_MAP", sender: nil)
     }
     
     private func initViews() {
@@ -98,8 +113,9 @@ class HeroesViewController: UIViewController {
                     case .logout:
                         self?.navigationController?.popViewController(animated: true)
                         break
+                    
                     case .fromApi:
-                    self?.clearButton.isHidden = true
+                        self?.clearButton.isHidden = true
                         break
                 }
             }

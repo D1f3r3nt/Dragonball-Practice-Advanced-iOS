@@ -65,6 +65,13 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         )
     }
     
+    func mapViewModel() -> MapViewControllerProtocol {
+        MapViewModel(
+            apiProvider: apiProvider,
+            secureDataProvider: secureData
+        )
+    }
+    
     func splashViewModel() -> SplashViewControllerProtocol {
         SplashViewModel(
             secureData: secureData

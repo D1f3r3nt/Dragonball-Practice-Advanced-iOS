@@ -21,9 +21,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjV-aV-BJQ">
-                                <rect key="frame" x="301.33333333333331" y="114" width="81.666666666666686" height="35"/>
+                                <rect key="frame" x="329" y="114" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="0cJ-Eo-Y3q"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Log out">
+                                <buttonConfiguration key="configuration" style="filled" image="rectangle.portrait.and.arrow.right" catalog="system">
                                     <color key="baseBackgroundColor" systemColor="systemGrayColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -31,13 +34,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZc-IW-P5U">
-                                <rect key="frame" x="276.66666666666669" y="159" width="106.33333333333331" height="35"/>
+                                <rect key="frame" x="335" y="773.66666666666663" width="48" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Clean BDD">
+                                <buttonConfiguration key="configuration" style="filled" image="trash.fill" catalog="system">
                                     <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapClear:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="etW-xV-gsF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddl-5A-Q9q">
+                                <rect key="frame" x="10" y="773" width="52" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="map" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapMap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h9T-hr-D3X"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Heroes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzF-yo-Y5w">
@@ -72,7 +83,6 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YZc-IW-P5U" secondAttribute="trailing" constant="10" id="754-se-dqi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VoR-dy-3e4" secondAttribute="trailing" id="7qP-VP-RQZ"/>
                             <constraint firstItem="Czf-b4-PfC" firstAttribute="top" secondItem="pzF-yo-Y5w" secondAttribute="bottom" id="K0H-sf-OBk"/>
-                            <constraint firstItem="YZc-IW-P5U" firstAttribute="top" secondItem="QjV-aV-BJQ" secondAttribute="bottom" constant="10" id="KVX-RC-YtO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Czf-b4-PfC" secondAttribute="bottom" id="THb-q2-gvd"/>
                             <constraint firstItem="pzF-yo-Y5w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Vq0-yv-d5Q"/>
                             <constraint firstItem="VoR-dy-3e4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dX6-pk-8IE"/>
@@ -80,8 +90,11 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pzF-yo-Y5w" secondAttribute="trailing" id="i1d-XI-lBL"/>
                             <constraint firstItem="pzF-yo-Y5w" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iSr-eR-xqg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VoR-dy-3e4" secondAttribute="bottom" id="knY-zP-NqO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="YZc-IW-P5U" secondAttribute="bottom" constant="10" id="sfQ-yO-GVw"/>
                             <constraint firstItem="VoR-dy-3e4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sym-Hu-xPT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Czf-b4-PfC" secondAttribute="trailing" id="vJg-Zt-hON"/>
+                            <constraint firstItem="Ddl-5A-Q9q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="wHD-pF-HJ8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ddl-5A-Q9q" secondAttribute="bottom" constant="10" id="wMU-5u-eSb"/>
                             <constraint firstItem="QjV-aV-BJQ" firstAttribute="top" secondItem="pzF-yo-Y5w" secondAttribute="bottom" constant="10" id="xvx-tP-76q"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QjV-aV-BJQ" secondAttribute="trailing" constant="10" id="ydD-z4-jTZ"/>
                         </constraints>
@@ -93,11 +106,22 @@
                         <outlet property="tableView" destination="Czf-b4-PfC" id="ssC-aM-YwT"/>
                         <segue destination="97n-7a-Mt9" kind="show" identifier="HEROES_TO_HERO_DETAIL" id="YaR-bB-dgY"/>
                         <segue destination="Bgb-hN-olg" kind="show" identifier="LOGOUT" id="X9f-BC-Ga7"/>
+                        <segue destination="ycy-mX-yQF" kind="show" identifier="HEROES_TO_MAP" id="FdU-AO-DJ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="0MW-4L-qmA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" id="ycy-mX-yQF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vgY-3X-bBl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vuz-hz-eVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811" y="-148"/>
         </scene>
         <!--HeroDetail-->
         <scene sceneID="sbi-Bx-RRX">
@@ -107,7 +131,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gx9-YS-tJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="-163"/>
+            <point key="canvasLocation" x="840" y="-35"/>
         </scene>
         <!--Splash-->
         <scene sceneID="DJ2-rk-2NE">
@@ -117,10 +141,13 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1V-aK-IUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="80"/>
+            <point key="canvasLocation" x="822" y="81"/>
         </scene>
     </scenes>
     <resources>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
+        <image name="trash.fill" catalog="system" width="119" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
