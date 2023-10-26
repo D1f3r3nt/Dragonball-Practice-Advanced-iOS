@@ -58,7 +58,25 @@ class MapViewModel: MapViewControllerProtocol {
             }
             
         }
+    }
+    
+    func goToDetail(of id: String) {
+        if id.isEmpty {
+            return
+        }
         
+        guard let hero = self.heroCoreData.getHero(by: id) else {
+            return
+        }
         
+        self.viewState?(.navigateToDetail(hero: hero))
+    }
+    
+    func heroDetailViewModel(hero: Hero) -> HeroDetailViewControllerProtocol {
+        HeroDetailViewModel(
+            hero: hero,
+            apiProvider: apiProvider,
+            secureDataProvider: secureDataProvider
+        )
     }
 }

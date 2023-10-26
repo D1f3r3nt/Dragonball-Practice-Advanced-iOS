@@ -64,11 +64,22 @@
                     <connections>
                         <outlet property="loadingView" destination="vPw-uF-PTO" id="ybc-yH-b2a"/>
                         <outlet property="worldView" destination="ULA-G9-Qxn" id="grb-Dz-GwL"/>
+                        <segue destination="8gy-IT-15z" kind="show" identifier="MAP_TO_HERO_DEATIL" id="o5e-uq-rVI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="97" y="-27"/>
+        </scene>
+        <!--HeroDetail-->
+        <scene sceneID="5jN-DZ-6jG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HeroDetail" id="8gy-IT-15z" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Kkp-QD-u6H"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UhB-5f-HUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="-27"/>
         </scene>
     </scenes>
     <resources>

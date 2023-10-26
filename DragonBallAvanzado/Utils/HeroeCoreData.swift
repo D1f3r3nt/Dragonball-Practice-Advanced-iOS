@@ -27,6 +27,19 @@ class HeroCoreData {
         return HeroMapper.mapperDao(of: persons)
     }
     
+    func getHero(by id: String) -> Hero? {
+        let moc = CoreDataStack.shared.persistentContainer.viewContext
+        let fetch = NSFetchRequest<HeroDAO>(entityName: HeroDAO.entityName)
+        fetch.predicate = NSPredicate(format: "id = %@", id)
+        
+        guard let persons = try? moc.fetch(fetch)
+            else {
+            return nil
+        }
+        
+        return HeroMapper.mapperDao(of: persons).first
+    }
+    
     private func saveHeroes(of heroes: Heroes) {
         let moc = CoreDataStack.shared.persistentContainer.viewContext
         guard let entityHero = NSEntityDescription.entity(forEntityName: HeroDAO.entityName, in: moc)
