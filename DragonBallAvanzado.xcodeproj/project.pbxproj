@@ -16,6 +16,7 @@
 		1D529C272AE1BFF200F818FA /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C262AE1BFF200F818FA /* HeroDetailViewModel.swift */; };
 		1D529C292AE1C0C200F818FA /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C282AE1C0C200F818FA /* HeroLocation.swift */; };
 		1D529C2C2AE1CB2600F818FA /* HeroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */; };
+		1D85A9132AEADB0A00D53D12 /* SecureDataProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85A9122AEADB0A00D53D12 /* SecureDataProviderTest.swift */; };
 		1DA01DA22AE9C2DD00AC2E70 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */; };
 		1DA01DA42AE9CB9200AC2E70 /* LocationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */; };
 		1DA01DA62AE9CC7900AC2E70 /* LocationCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */; };
@@ -52,6 +53,7 @@
 		1D529C262AE1BFF200F818FA /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
 		1D529C282AE1C0C200F818FA /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
 		1D529C2B2AE1CB2600F818FA /* HeroAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnnotation.swift; sourceTree = "<group>"; };
+		1D85A9122AEADB0A00D53D12 /* SecureDataProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProviderTest.swift; sourceTree = "<group>"; };
 		1DA01DA12AE9C2DD00AC2E70 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
 		1DA01DA32AE9CB9200AC2E70 /* LocationDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDAO.swift; sourceTree = "<group>"; };
 		1DA01DA52AE9CC7900AC2E70 /* LocationCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoreData.swift; sourceTree = "<group>"; };
@@ -129,6 +131,30 @@
 			path = MapAnnotation;
 			sourceTree = "<group>";
 		};
+		1D85A90F2AEAD65500D53D12 /* DragonBallAvanzadoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A9102AEADAE600D53D12 /* Data */,
+			);
+			path = DragonBallAvanzadoTests;
+			sourceTree = "<group>";
+		};
+		1D85A9102AEADAE600D53D12 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A9112AEADAEE00D53D12 /* Local */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1D85A9112AEADAEE00D53D12 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				1D85A9122AEADB0A00D53D12 /* SecureDataProviderTest.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		1DA01DA02AE9C2C800AC2E70 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB65DDA2AD5C1C60046475E /* DragonBallAvanzado */,
+				1D85A90F2AEAD65500D53D12 /* DragonBallAvanzadoTests */,
 				1DB65DD92AD5C1C60046475E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -382,6 +409,7 @@
 				1DB65DFB2AD5CD540046475E /* LoginViewModel.swift in Sources */,
 				1DC256F42AD71997008B907A /* ApiProvider.swift in Sources */,
 				1DA01DA42AE9CB9200AC2E70 /* LocationDAO.swift in Sources */,
+				1D85A9132AEADB0A00D53D12 /* SecureDataProviderTest.swift in Sources */,
 				1DA01DA62AE9CC7900AC2E70 /* LocationCoreData.swift in Sources */,
 				1DC6371B2ADF0C67002D420B /* Hero.swift in Sources */,
 				1D529C292AE1C0C200F818FA /* HeroLocation.swift in Sources */,
