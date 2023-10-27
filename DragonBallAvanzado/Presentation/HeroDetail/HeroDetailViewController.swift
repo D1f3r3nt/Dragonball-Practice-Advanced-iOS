@@ -24,6 +24,7 @@ enum HeroDetailViewState {
 
 // MARK: - View -
 class HeroDetailViewController: UIViewController {
+    
     // MARK: - Outlets -
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var image: UIImageView!
@@ -32,9 +33,9 @@ class HeroDetailViewController: UIViewController {
     
     var viewModel: HeroDetailViewControllerProtocol?
     
+    // MARK: - Overrides -
     override func viewDidLoad() {
         super.viewDidLoad()
-        initViews()
         setObservers()
         viewModel?.handleViewDidLoad()
     }
@@ -45,10 +46,6 @@ class HeroDetailViewController: UIViewController {
     }
     
     // MARK: - Privates -
-    private func initViews() {
-        
-    }
-    
     private func setObservers() {
         viewModel?.state = { [weak self] state in
             DispatchQueue.main.async {

@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 
+// MARK: - Class -
 class HeroAnnotation: NSObject, MKAnnotation {
     var title: String?
     var info: String?

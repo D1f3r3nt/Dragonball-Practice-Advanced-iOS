@@ -8,12 +8,14 @@
 import Foundation
 import KeychainSwift
 
+// MARK: - Delegate -
 public protocol SecureDataProvierProtocol {
     func save(token: String)
     func getToken() -> String?
     func clear()
 }
 
+// MARK: - Class -
 class SecureDataProvider: SecureDataProvierProtocol {
     private let keychain = KeychainSwift()
     

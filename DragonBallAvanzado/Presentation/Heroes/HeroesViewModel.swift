@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Class -
 class HeroesViewModel: HeroesViewControllerDelegate {
 
     private let heroCoreData: HeroCoreData = .init()
@@ -14,8 +15,6 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     
     private let apiProvider: ApiProviderProtocol
     private let secureData: SecureDataProvierProtocol
-    
-    var viewState: ((HeroesViewState) -> Void)?
     
     private var heroesFromInternet: Heroes = []
     private var heroesPrint: Heroes = []
@@ -29,6 +28,7 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     }
     
     //MARK: - Extended -
+    var viewState: ((HeroesViewState) -> Void)?
     
     func onViewAppear() {
         self.viewState?(.loading(true))
@@ -113,6 +113,7 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         heroesPrint.count
     }
     
+    // MARK: - Privates -
     private func setClassData(of heroes: Heroes, save: Bool = false) {
         self.heroesFromInternet = heroes
         self.heroesPrint = self.heroesFromInternet

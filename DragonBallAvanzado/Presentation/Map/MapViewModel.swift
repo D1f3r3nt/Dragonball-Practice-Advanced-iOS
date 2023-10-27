@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Class -
 class MapViewModel: MapViewControllerProtocol {
     
     private let apiProvider: ApiProviderProtocol
@@ -15,8 +16,6 @@ class MapViewModel: MapViewControllerProtocol {
     private let heroCoreData: HeroCoreData = .init()
     private let locationCoreData: LocationCoreData = .init()
     
-    var viewState: ((MapViewState) -> Void)?
-    
     init(
         apiProvider: ApiProviderProtocol,
         secureDataProvider: SecureDataProvierProtocol
@@ -24,6 +23,9 @@ class MapViewModel: MapViewControllerProtocol {
         self.apiProvider = apiProvider
         self.secureDataProvider = secureDataProvider
     }
+    
+    // MARK: - Extended -
+    var viewState: ((MapViewState) -> Void)?
     
     func handleViewDidLoad() {
         defer { viewState?(.loading(false)) }

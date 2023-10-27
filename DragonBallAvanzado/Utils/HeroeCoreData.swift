@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+// MARK: - Class -
 class HeroCoreData {
     
     func manageHeroes(of heroes: Heroes) {
@@ -40,6 +41,23 @@ class HeroCoreData {
         return HeroMapper.mapperDao(of: persons).first
     }
     
+    public func deleteAll() {
+        let moc = CoreDataStack.shared.persistentContainer.viewContext
+        let requestAllHeroes = NSFetchRequest<HeroDAO>(entityName: HeroDAO.entityName)
+        
+        guard let persons = try? moc.fetch(requestAllHeroes)
+            else {
+            return
+        }
+        
+        persons.forEach { person in
+            moc.delete(person)
+        }
+        
+        try? moc.save()
+    }
+    
+    // MARK: - Privates -
     private func saveHeroes(of heroes: Heroes) {
         let moc = CoreDataStack.shared.persistentContainer.viewContext
         guard let entityHero = NSEntityDescription.entity(forEntityName: HeroDAO.entityName, in: moc)
@@ -54,22 +72,6 @@ class HeroCoreData {
             heroDao.name = hero.name
             heroDao.id = hero.id
             heroDao.photo = hero.photo
-        }
-        
-        try? moc.save()
-    }
-    
-    public func deleteAll() {
-        let moc = CoreDataStack.shared.persistentContainer.viewContext
-        let requestAllHeroes = NSFetchRequest<HeroDAO>(entityName: HeroDAO.entityName)
-        
-        guard let persons = try? moc.fetch(requestAllHeroes)
-            else {
-            return
-        }
-        
-        persons.forEach { person in
-            moc.delete(person)
         }
         
         try? moc.save()

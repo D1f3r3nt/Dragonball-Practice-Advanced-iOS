@@ -27,11 +27,13 @@ enum MapViewState {
 // MARK: - View -
 class MapViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var worldView: MKMapView!
     
     var viewModel: MapViewControllerProtocol?
     
+    // MARK: - Overrides -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialize()
@@ -51,10 +53,12 @@ class MapViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions -
     @IBAction func didTapBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    // MARK: - Privates -
     private func setObservers() {
         viewModel?.viewState = { [weak self] state in
             DispatchQueue.main.async {
@@ -93,6 +97,7 @@ class MapViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions -
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
         guard let point = annotation as? MapAnnotation else {

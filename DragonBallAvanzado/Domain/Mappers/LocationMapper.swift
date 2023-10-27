@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+// MARK: - Class -
 class LocationMapper {
     static func mapperDao(of locationsDao: [LocationDAO]) -> HeroLocations {
         locationsDao.map { locationDao in

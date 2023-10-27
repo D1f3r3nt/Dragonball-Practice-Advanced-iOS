@@ -37,18 +37,11 @@ class LoginViewController: UIViewController {
     
     var viewModel: LoginViewControllerProtocol?
     
+    // MARK: - Overrides -
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
         setObservers()
-    }
-
-    // MARK: - Actions -
-    @IBAction func didTapLogin(_ sender: Any) {
-        viewModel?.handleLoginPressed(
-            email: emailField.text,
-            password: passwordField.text
-        )
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,6 +52,14 @@ class LoginViewController: UIViewController {
         
         heroesViewController.viewModel = viewModel?.heroesViewModel
         
+    }
+
+    // MARK: - Actions -
+    @IBAction func didTapLogin(_ sender: Any) {
+        viewModel?.handleLoginPressed(
+            email: emailField.text,
+            password: passwordField.text
+        )
     }
     
     // MARK: - Privates -

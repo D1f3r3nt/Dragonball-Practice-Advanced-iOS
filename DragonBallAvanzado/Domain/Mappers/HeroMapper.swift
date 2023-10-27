@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Class -
 class HeroMapper {
     static func mapperDao(of heroesDao: [HeroDAO]) -> Heroes {
         heroesDao.map { heroDao in

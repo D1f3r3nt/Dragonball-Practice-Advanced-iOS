@@ -7,14 +7,13 @@
 
 import Foundation
 
+// MARK: - Class -
 class HeroDetailViewModel: HeroDetailViewControllerProtocol {
     
     private let apiProvider: ApiProviderProtocol
     private let secureDataProvider: SecureDataProvierProtocol
     
-    private let locationCoreData = LocationCoreData()
-    
-    var state: ((HeroDetailViewState) -> Void)?
+    private let locationCoreData: LocationCoreData = .init()
     
     private var hero: Hero
     private var heroLocation: HeroLocations = []
@@ -30,6 +29,7 @@ class HeroDetailViewModel: HeroDetailViewControllerProtocol {
     }
     
     // MARK: - Extended -
+    var state: ((HeroDetailViewState) -> Void)?
     
     func handleViewDidLoad() {
         defer { state?(.loading(false)) }

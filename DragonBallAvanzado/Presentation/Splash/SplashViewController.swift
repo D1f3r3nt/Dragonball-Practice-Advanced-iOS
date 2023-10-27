@@ -27,6 +27,7 @@ class SplashViewController: UIViewController {
 
     var viewModel: SplashViewControllerProtocol?
     
+    // MARK: - Overrides -
     override func viewDidLoad() {
         super.viewDidLoad()
         setObservers()
@@ -52,6 +53,7 @@ class SplashViewController: UIViewController {
         
     }
     
+    // MARK: - Privates -
     private func setObservers() {
         viewModel?.viewState = { [weak self] state in
             DispatchQueue.main.async {

@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+// MARK: - Class -
 class LocationCoreData {
     
     func manageLocations(of locations: HeroLocations) {
@@ -30,6 +31,23 @@ class LocationCoreData {
         return LocationMapper.mapperDao(of: locations)
     }
     
+    func deleteAll() {
+        let moc = CoreDataStack.shared.persistentContainer.viewContext
+        let requestAllLocations = NSFetchRequest<LocationDAO>(entityName: LocationDAO.entityName)
+        
+        guard let locations = try? moc.fetch(requestAllLocations)
+            else {
+            return
+        }
+        
+        locations.forEach { location in
+            moc.delete(location)
+        }
+        
+        try? moc.save()
+    }
+    
+    // MARK: - Privates -
     private func saveLocations(of locations: HeroLocations) {
         let moc = CoreDataStack.shared.persistentContainer.viewContext
         guard let entityHero = NSEntityDescription.entity(
@@ -55,22 +73,6 @@ class LocationCoreData {
         let moc = CoreDataStack.shared.persistentContainer.viewContext
         let requestAllLocations = NSFetchRequest<LocationDAO>(entityName: LocationDAO.entityName)
         requestAllLocations.predicate = NSPredicate(format: "hero = %@", hero )
-        
-        guard let locations = try? moc.fetch(requestAllLocations)
-            else {
-            return
-        }
-        
-        locations.forEach { location in
-            moc.delete(location)
-        }
-        
-        try? moc.save()
-    }
-    
-    func deleteAll() {
-        let moc = CoreDataStack.shared.persistentContainer.viewContext
-        let requestAllLocations = NSFetchRequest<LocationDAO>(entityName: LocationDAO.entityName)
         
         guard let locations = try? moc.fetch(requestAllLocations)
             else {

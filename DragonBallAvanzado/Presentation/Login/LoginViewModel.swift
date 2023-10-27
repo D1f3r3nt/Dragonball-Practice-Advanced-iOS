@@ -7,15 +7,11 @@
 
 import Foundation
 
+// MARK: - Class -
 final class LoginViewModel: LoginViewControllerProtocol {
     
     private let apiProvider: ApiProviderProtocol
     private let secureData: SecureDataProvierProtocol
-    
-    var viewState: ((LoginViewState) -> Void)?
-    var heroesViewModel: HeroesViewControllerDelegate {
-        HeroesViewModel(apiProvider: apiProvider, secureData: secureData)
-    }
     
     init(
         apiProvider: ApiProviderProtocol,
@@ -62,6 +58,11 @@ final class LoginViewModel: LoginViewControllerProtocol {
     }
     
     // MARK: - Extended -
+    var viewState: ((LoginViewState) -> Void)?
+    var heroesViewModel: HeroesViewControllerDelegate {
+        HeroesViewModel(apiProvider: apiProvider, secureData: secureData)
+    }
+    
     func handleLoginPressed(email: String?, password: String?) {
         viewState?(.loading(true))
         
@@ -80,7 +81,6 @@ final class LoginViewModel: LoginViewControllerProtocol {
             
             self.doLoginWith(email: email ?? "", password: password ?? "")
         }
-        
         
     }
 }

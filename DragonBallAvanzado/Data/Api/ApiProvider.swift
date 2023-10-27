@@ -14,6 +14,7 @@ public protocol ApiProviderProtocol {
     func getLocations(by heroId: String?, token: String, completion: ((HeroLocations) -> Void)?)
 }
 
+// MARK: - Class -
 class ApiProvider: ApiProviderProtocol {
     
     private let apiBaseURL = "https://dragonball.keepcoding.education/api"
@@ -143,6 +144,7 @@ class ApiProvider: ApiProviderProtocol {
     }
 }
 
+// MARK: - Extensions -
 public extension NotificationCenter {
     static let apiProviderNotification = Notification.Name("NotificationApiProvider")
     static let tokenKey = "TOKEN"

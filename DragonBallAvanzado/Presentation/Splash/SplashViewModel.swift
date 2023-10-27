@@ -7,9 +7,18 @@
 
 import Foundation
 
+// MARK: - Class -
 class SplashViewModel: SplashViewControllerProtocol {
+    
     private let secureData: SecureDataProvierProtocol
     
+    init(
+        secureData: SecureDataProvierProtocol
+    ) {
+        self.secureData = secureData
+    }
+    
+    // MARK: - Extended -
     var heroesViewModel: HeroesViewControllerDelegate {
         HeroesViewModel(apiProvider: ApiProvider(), secureData: secureData)
     }
@@ -20,13 +29,6 @@ class SplashViewModel: SplashViewControllerProtocol {
     
     var viewState: ((SpalshViewState) -> Void)?
     
-    init(
-        secureData: SecureDataProvierProtocol
-    ) {
-        self.secureData = secureData
-    }
-    
-    // MARK: - Extended -
     func handleViewDidLoad() {
         DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(2)) { [weak self] in
             if self?.secureData.getToken() == nil {

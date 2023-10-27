@@ -8,16 +8,19 @@
 import UIKit
 import Kingfisher
 
+// MARK: - View -
 class HeroCellView: UITableViewCell {
     
     static let identifier: String = "HeroCellView"
     static let estimatedHeight: CGFloat = 256
     
+    // MARK: - Outlets -
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var heroDescription: UILabel!
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var containerView: UIView!
     
+    // MARK: - Overrides -
     override func prepareForReuse() {
         super.prepareForReuse()
         

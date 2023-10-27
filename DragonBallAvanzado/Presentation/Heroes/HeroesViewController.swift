@@ -33,6 +33,7 @@ enum HeroesViewState {
 // MARK: - View -
 class HeroesViewController: UIViewController {
     
+    // MARK: - Outlets -
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var serachBar: UITextField!
@@ -40,6 +41,7 @@ class HeroesViewController: UIViewController {
     
     var viewModel: HeroesViewControllerDelegate?
     
+    // MARK: - Overrides -
     override func viewDidLoad() {
         super.viewDidLoad()
         setObservers()
@@ -68,6 +70,7 @@ class HeroesViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions -
     @IBAction func didChangeSearch(_ sender: Any) {
         self.viewModel?.filterHeroes(by: self.serachBar.text ?? "")
     }
@@ -85,6 +88,7 @@ class HeroesViewController: UIViewController {
         performSegue(withIdentifier: "HEROES_TO_MAP", sender: nil)
     }
     
+    // MARK: - Privates -
     private func initViews() {
         tableView.register(
             UINib(
